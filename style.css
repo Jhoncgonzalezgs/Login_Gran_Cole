@@ -14,6 +14,7 @@ body {
     flex: 1.2;
     background: url(https://images.pexels.com/photos/8926556/pexels-photo-8926556.jpeg) center center no-repeat;
     background-size: cover;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,9 +25,71 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: #2564eb52;
+    background: rgba(45, 58, 140, 0.599);
+    z-index: 1;
+    pointer-events: none;
 }
-
+.left-panel > * {
+    position: relative;
+    z-index: 2;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.logo img {
+    width: 36px;
+    height: 36px;
+}
+.logo strong {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.logo span {
+    font-size: 0.98rem;
+}
+.left-panel h2 {
+    font-size: 2.2rem;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+}
+.left-panel p {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+    color: #e0e6f7;
+}
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.left-panel ul li {
+    margin-bottom: 14px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.stats {
+    display: flex;
+    gap: 32px;
+    font-size: 1.1rem;
+}
+.stats div {
+    text-align: center;
+}
+.stat-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.stat-label {
+    display: block;
+    font-size: 1rem;
+}
 
 .right-panel {
     flex: 1;
@@ -106,26 +169,36 @@ button[type="submit"] {
     font-weight: 600;
     cursor: pointer;
     margin-bottom: 12px;
-    transition: background 0.2s;
+    transition: background 0.5s;
 }
-
 button[type="submit"]:hover {
     background: #1e40af;
 }
-
 .register-link {
     font-size: 0.97rem;
     color: #6b7280;
     margin-bottom: 10px;
 }
-
 .register-link a {
     color: #2563eb;
     text-decoration: none;
 }
-
 footer {
     margin-top: 18px;
     font-size: 0.92rem;
     color: #b0b8c1;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        min-height: 50vh;
+    }
+    .left-panel {
+        padding: 40px 20px;
+    }
 }
