@@ -10,9 +10,23 @@ body {
 }
 
 .left-panel {
+    position: relative;
     flex: 1.2;
-    background: white;
+    background: url(https://images.pexels.com/photos/8926556/pexels-photo-8926556.jpeg) center center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 40px;
+    overflow: hidden;
 }
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #2564eb52;
+}
+
 
 .right-panel {
     flex: 1;
